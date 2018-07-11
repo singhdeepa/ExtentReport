@@ -39,7 +39,7 @@ public class JavascriptPopup  {
 
    @Test(dataProvider="getdata")
    public void test(String username,String pwd) throws IOException, Exception {
-           
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
            test=extent.startTest("JavascriptPopup");
 
            System.setProperty("webdriver.chrome.driver", "C:\\Users\\TYSS\\eclipse-workspace\\ExtentReportSample\\src\\test\\resources\\chromedriver.exe");
@@ -47,9 +47,9 @@ public class JavascriptPopup  {
            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
            driver.get("https://www.google.com/gmail/about/");
            driver.findElement(By.xpath("//a[.='Sign In']")).click(); 
-           PageFactory.initElements(driver, lgn);
-           lgn.loginApp(username, pwd);
-         //  String username=ExcelLib.getExcelData("Sheet1",3,0);
+          // PageFactory.initElements(driver, lgn);
+          // lgn.loginApp(username, pwd);
+          // String username=ExcelLib.getExcelData("Sheet1",3,0);
          //  String pwd=ExcelLib.getExcelData("Sheet1",3,1);
           //.loginApp(ExcelLib.getExcelData("Sheet1",2,0), ExcelLib.getExcelData("Sheet1",2,1));
           /* String value=ExcelLib.getExcelData("Sheet1",3,0);
@@ -62,11 +62,11 @@ public class JavascriptPopup  {
            driver.findElement(By.name("password")).sendKeys(ExcelLib.getExcelData("Sheet1",row,column));
            test.log(LogStatus.PASS, "Password is entered");*/
        //    Thread.sleep(3000);
-           /*driver.findElement(By.xpath("//span[.='Next']")).click();
-           test.log(LogStatus.PASS, "Next button is Clicked");
-           driver.findElement(By.xpath("//div[.='COMPOSE']")).click();*/
+           driver.findElement(By.xpath("//span[.='Next']")).click();
+         //  test.log(LogStatus.PASS, "Next button is Clicked");
+           driver.findElement(By.xpath("//div[.='COMPOSE']")).click();
           // test.log(LogStatus.PASS, "Compose button is Clicked");
-          // driver.findElement(By.xpath("//div[@class='a1 aaA aMZ']")).click();
+           driver.findElement(By.xpath("//div[@class='a1 aaA aMZ']")).click();
           /* StringSelection s=new StringSelection("D:\\FlipkarSC_vasanth.ods");
            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(s, null);
            Robot r = new Robot();
@@ -88,7 +88,7 @@ public class JavascriptPopup  {
 	   Object ob[][]=new Object[4][2];
 	   for(int i=1;i<4;i++)
 	   {
-		   for(int j=1;j<2;j++)
+		   for(int j=0;j<2;j++)
 		   {
 			   ob[i][j]=ExcelLib.getExcelData("Sheet1", i, j);
 		   }
