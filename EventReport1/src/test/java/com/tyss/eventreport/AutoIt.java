@@ -23,6 +23,6 @@ public class AutoIt {
  Thread.sleep(5000);
 	    Runtime.getRuntime().exec("C:\\Program Files (x86)\\AutoIt3\\SciTE\\..\\aut2exe\\aut2exe.exe");
  */
- 
+ system.out.println("test");
 	}
 }
